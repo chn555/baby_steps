@@ -1,8 +1,0 @@
-#!/bin/bash
-
-for s in {a..z}
-do
-sleep 2.8
-touch file$s
-echo "file$s has been created you waste of code line"
-done
