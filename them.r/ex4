@@ -1,0 +1,9 @@
+#!/bin/bash 
+name="tom"
+lname="harpaz"
+id='"you really thought i was going to give you my ID?"'
+COB="Japan... JK it's Israel..."
+DOB="9.1.1998"
+var1=$(echo  "Hello, My name is $name $lname" ; echo "My ID is $id," ; echo "and my country of birth is $COB")
+echo $var1 > ~/tmp
+echo "Check for tmp file inside your home directory"

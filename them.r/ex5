@@ -1,0 +1,5 @@
+#!/bin/bash
+echo -e 'Run the script using ". ex5" so it will run in the current process \ninsted of running it in a subshell and by that move to the directory you created'
+mkdir -p ~/tom/tmp
+cd  ~/tom/tmp/
+
