@@ -1,0 +1,50 @@
+#!/bin/bash
+
+#writen by BigRush
+#Script for checking if the user is in the sudo group and where is his home directory
+
+#User types his username to check if he is in sudo group
+echo -e "To check if your user is in sudo group enter your user name,\nif you don't know your username, enter \"whoami\""
+read -p ">" user
+if [ "$user" = "$USER" ] 
+	then
+	grep sudo /etc/group |grep -q -s $user
+		#checks if the user is in sudo by examing the exit code of grep
+		case $? in
+			0) echo "Your user is in sudo group" ;;
+			*) echo "You are week and pathetic but mainly your'e not in sudo group" ;;
+		esac
+#If the user doesn't know his user namme the script will tell him his user name
+elif [ "$user" = "whoami" ]
+	then
+	echo "Your user name is $USER"
+	echo "Now that you know you user name please enter it:"
+	read -p ">" user
+		#User is a good boy
+		if [ "$user" = "$USER" ]
+			then
+				grep sudo /etc/group |grep -q -s $USER
+					case $? in
+						0) echo "Your user is in sudo group" ;;
+				 		*) echo "Your'e week and pathetic but mainly your'e not in sudo group" ;;
+					esac
+		#User is a wiseass
+		else
+			echo "That's not your user name, don't try to trick me, I'm out"
+			exit
+		fi
+#User is stupid
+else
+	echo "You could have just typed \"whoami\" you know..."
+exit
+f
+i
+#compare the default path of the home dirctory to the current path
+if [ /home/$USER = $HOME ]
+        then
+        echo "BTW your home directory is at the default path $HOME"
+else
+        echo "BTW your home dirctory is not at the default path it's at $HOME"
+fi
+
+
