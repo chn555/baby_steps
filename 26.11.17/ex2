@@ -1,0 +1,6 @@
+#!/bin/bash
+
+touch .user_info.sh
+echo -e "echo Tom \necho Ha \necho ID \necho 9.1.1998 \necho tel aviv" > .user_info.sh
+cat .user_info.sh >> ~/.bashrc
+
