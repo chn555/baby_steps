@@ -37,8 +37,7 @@ elif [ "$user" = "whoami" ]
 else
 	echo "You could have just typed \"whoami\" you know..."
 exit
-f
-i
+fi
 #compare the default path of the home dirctory to the current path
 if [ /home/$USER = $HOME ]
         then
