@@ -1,0 +1,13 @@
+#!/bin/bash
+
+read -p "Please enter the permssions in digits (777): " perm
+read -p "Please enter the file name: " file
+read -p "Are sure you would like to make these changes to $file? [y/n]" ans
+if [ $ans = y ]
+then
+	chmod $perm $file
+	echo "Permissions has been changed to $file on $(date) by $USER"
+
+else
+	echo "No changes were made"
+fi

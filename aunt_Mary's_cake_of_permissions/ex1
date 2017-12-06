@@ -1,0 +1,11 @@
+#!/bin/bash
+
+list=$(ls -laR / |awk '{print $3}' |wc -w)
+id=$(id -u)
+
+if [ $id -eq 1000 ]
+then
+	echo "You own $list files"
+else
+echo "Permission denied"
+fi
