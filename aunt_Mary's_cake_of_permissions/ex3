@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#user add to groups
+
+if [ $USER != "root" ]
+then
+echo "You are not root user this will be logged"
+echo "$USER has tried to execute this script on $(date)" >> /tmp/ex3.log
+fi
+
+read -p "Please enter user list: " user
+read -p "Please enter a group name: " group
+read -p "Please enter aliass name that you want to create:  " ali
+read -p "Please enter the comman you want to execute: " comm
+
+for i in $user
+do
+	usermod -G $group $i
+done
+
+echo "alias $ali=\'$comm\'" >> ~/.bashrc

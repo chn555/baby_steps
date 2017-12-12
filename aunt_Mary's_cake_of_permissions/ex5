@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+read -p "Please enter the groups you would like to be added: " group
+
+while [ $(wc -w <<<$group) -lt 4 ]
+do
+	read -p  "You must enter at least four groups: " group
+done
+
+#function checks if the user in the group
+func () {
+
+for i in $group
+do
+	grep $i /etc/group |grep -q -s $USER &> /dev/null
+
+
+	if [ $? -eq 0 ]
+	then
+		printf "You are already in group $i\n"
+	else
+		usermod -aG $i $USER
+		printf "\033[031;47mYou are now in group $i\n"
+	fi
+done
+}
+func

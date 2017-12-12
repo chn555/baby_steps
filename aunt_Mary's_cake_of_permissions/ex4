@@ -1,0 +1,5 @@
+#!/bin/bash
+
+read -p "Please enter folder names that you would like to create: " folder
+
+mkdir -m 555 $folder
